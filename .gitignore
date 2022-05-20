@@ -1,1 +1,2 @@
+#Pasta do npm que vai ser ignorada no git
 /node_modules
