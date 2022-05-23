@@ -2,45 +2,46 @@
 
     <%- include("../commom/menu")%>
 
-    <section class="container bg-light h-100">
-        <div class="row">
-            <h1 class="mt-5 text-center mb-5">Todas nossas Noticias</h1>
-        </div>
+    <main class="mb-4">
+      <div class="bg-light p-5 mb-4">
+          <div class="container text-center">
+              <h1>Notícias</h1>
+          </div>
+      </div>
 
-        <div class="row mb-5">
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Noticia 1</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis placeat voluptas, maxime distinctio consectetur optio ex dolor consequuntur eius omnis aut cumque nihil maiores. Eaque debitis et reiciendis ipsa porro?</p>
-              </div>
-              <div class="card-footer">
-                <a href="#" class="btn btn-outline-primary" target="_blank">Saiba mais</a>
-              </div>
-            </div>
-          </div>  
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Noticia 2</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis placeat voluptas, maxime distinctio consectetur optio ex dolor consequuntur eius omnis aut cumque nihil maiores. Eaque debitis et reiciendis ipsa porro?</p>
-              </div>
-              <div class="card-footer">
-                <a href="#" class="btn btn-outline-primary" target="_blank">Saiba mais</a>
-              </div>
-            </div>
+      <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+              <% noticias.forEach(noticia => { %>
+
+                  <div class="col">
+                      <div class="card shadow">
+                          <div class="card-body">
+                              <h5 class="card-title">
+                                  <%= noticia.titulo %>
+                              </h5>
+                              <p class="card-text">
+                                  <%= noticia.conteudo.substring(0, 50) %>
+                                  ...
+                              </p>
+                              <p class="card-text">
+                                  <small class="text-muted">
+                                      <%= noticia.data_criacao.toLocaleString('pt-BR')
+                                                              .split(' ')
+                                                              .join(' às ') 
+                                      %>
+                                  </small>
+                              </p>
+                              <a href="/noticia?id=<%= noticia.id_noticia %>" class="btn btn-primary">
+                                  Saiba Mais
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+
+              <% }) %>
+
           </div>
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Noticia 3</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis placeat voluptas, maxime distinctio consectetur optio ex dolor consequuntur eius omnis aut cumque nihil maiores. Eaque debitis et reiciendis ipsa porro?</p>
-              </div>
-              <div class="card-footer">
-                <a href="#" class="btn btn-outline-primary">Saiba mais</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-        <%- include("../commom/footer")%>
+      </div>
+  </main>
+  <%- include("../commom/footer")%>
