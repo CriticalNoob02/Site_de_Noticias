@@ -65,6 +65,6 @@ app.post("/admin/salvar_noticia", function(req, res){
 
 
 //Servidor  rodando, dar um F8 para testar 
-app.listen(8080, () => {
+app.listen(process.env.PORT || 8080, () => {
     console.log("Servidor rodando na porta 8080 com express")
 })
