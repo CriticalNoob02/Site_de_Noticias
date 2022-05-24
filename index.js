@@ -54,13 +54,14 @@ app.post('/admin/autenticar', function(req, res){
 })
 
 //rota Salvar Noticia[
-app.post("/admin/salvar_noticia", function(req, res){
-    const { titulo, conteudo } = req.body
-    db.query("INSERT INTO noticias(titulo, conteudo) VALUES ($1, $2)", [titulo, conteudo], function (error, result){
-        res.redirect("/noticias")
-    } )
-})
-
+    app.post('/admin/salvar-noticia', function(req, res){
+        // recuperar informações passadas por POST
+        const { titulo, conteudo } = req.body
+        // console.log(titulo, conteudo)
+        db.query('INSERT INTO noticias(titulo, conteudo) VALUES ($1, $2)', [titulo, conteudo], function(error, result){
+            res.redirect('/noticias')
+        })
+    })
 
 
 //Servidor  rodando, dar um F8 para testar 
