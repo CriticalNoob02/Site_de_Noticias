@@ -46,9 +46,9 @@ app.get('/admin', function(req, res){
 // rota autenticar
 app.post('/admin/autenticar', function(req, res){
     const { usuario, senha } = req.body
-    // console.log(usuario, senha)
-    if( usuario == 'admin' && senha == '1234'){
-        req.session.autorizado = true
+     console.log(usuario, senha)
+    //if( usuario == 'admin' && senha == '1234'){
+       // req.session.autorizado = true
     }
 
     res.redirect('/admin')
