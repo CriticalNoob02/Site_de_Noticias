@@ -8,3 +8,7 @@ if(url_atual == "/"){
 else if(url_atual == "/noticias"){
     document.getElementById ("noticias-menu").className = "nav-link text-white active"
 }
+
+else if(url_atual == "/admin"){
+    document.getElementById ("admin-menu").className = "nav-link text-white active"
+}

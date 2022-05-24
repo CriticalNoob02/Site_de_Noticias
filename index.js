@@ -47,7 +47,7 @@ app.get('/admin', function(req, res){
 app.post('/admin/autenticar', function(req, res){
     const { usuario, senha } = req.body
     // console.log(usuario, senha)
-    if( usuario == 'admin' && senha == 'cellep1234'){
+    if( usuario == 'admin' && senha == '1234'){
         req.session.autorizado = true
     }
 
