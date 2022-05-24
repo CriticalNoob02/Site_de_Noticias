@@ -23,12 +23,12 @@ app.get("/noticias", function(req,res){
     })
 })
      
-
+//Rota Noticia
 app.get('/noticia', function(req, res){
 
     // recuperar id notícia por get
     const id = req.query.id
-    db.query('SELECT * FROM noticias ORDER BY id_noticia = $1', [id], function(error,result){
+    db.query('SELECT * FROM noticias WHERE id_noticia = $1', [id], function(error, result){
         res.render('news/noticia', { noticia : result.rows[0] })
 
     })
