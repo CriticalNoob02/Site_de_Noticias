@@ -4,7 +4,8 @@
   "description": "site de tecnologia 1",
   "main": "index.js",
   "scripts": {
-    "test": " "
+    "test": " ",
+    "start": "node index.js"
   },
   "author": "Adriel Develop",
   "license": "ISC",
@@ -13,5 +14,9 @@
     "express": "^4.18.1",
     "express-session": "^1.17.3",
     "pg": "^8.7.3"
+  },
+  "engines": {
+    "node": "16.x"
+    
   }
 }
